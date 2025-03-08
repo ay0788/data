@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Airline Safety Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Airline Safety Prediction</h1>
+    <p>Enter historical airline data to predict if safety will improve</p>
+
+    <form action="/predict" method="post">
+        <div class="form-group">
+            <label for="incident_rate">Past Incident Rate (per billion km):</label>
+            <input type="number" step="0.01" id="incident_rate" name="incident_rate" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="fatal_accidents">Past Fatal Accidents:</label>
+            <input type="number" id="fatal_accidents" name="fatal_accidents" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="fatalities">Past Fatalities:</label>
+            <input type="number" id="fatalities" name="fatalities" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="avail_seat_km">Available Seat KM per Week:</label>
+            <input type="number" id="avail_seat_km" name="avail_seat_km" required>
+        </div>
+        
+        <button type="submit">Predict Safety Trend</button>
+    </form>
+</body>
+</html>
